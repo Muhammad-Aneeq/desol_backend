@@ -31,7 +31,7 @@ app.use(
   cors({
     allowedHeaders: ["authorization", "Content-Type"],
     exposedHeaders: ["authorization"],
-    origin: "*", // Modify this in production to restrict specific origins
+    origin: "http://localhost:3000", // Allow requests from localhost:3000
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: false,
   })
