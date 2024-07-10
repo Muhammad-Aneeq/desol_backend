@@ -9,8 +9,17 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/",
-      "methods": ["GET", "POST", "PATCH", "DELETE"]
+      "dest": "index.js",
+      "methods": ["GET", "POST", "PATCH", "DELETE"],
+      "headers": {
+        "cache-control": "s-maxage=1, stale-while-revalidate"
+      }
     }
-  ]
+  ],
+  "functions": {
+    "api": {
+      "memory": 512,
+      "maxDuration": 20
+    }
+  }
 }
